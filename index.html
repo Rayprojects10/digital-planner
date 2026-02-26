@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head> 
+    <meta charset="UTF-8">
+    <title>Planner Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>📅 Meu Planner</h1>
+        <button id="toggleTheme">🌙</button>
+    </header>
+
+    <main>
+        <section class="calendar">
+            <h2 id="monthYear"></h2>
+            <div id="calendarDays"></div>
+        </section>
+
+        <section class="tasks">
+            <h2>Tarefas</h2>
+
+            <form id="taskForm">
+                <input type="text" id="taskInput" placeholder="Nova tarefa..." required>
+
+                <select id="priority">
+                    <option value="alta">🔥 Alta Prioridade</option> 
+                    <option value="media">⚡ Média Prioridade</option>
+                    <option value="baixa">🟢 Baixa Prioridade</option>
+                </select>
+
+                <div id="progressContainer">
+                    <div id="progressBar" ></div>
+                </div>
+                <p id="progressText">0% concluído</p>
+                
+                <input type="date" id="deadline">
+
+                <button type="submit">Adicionar</button>
+            </form>
+
+            <ul id="taskList"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

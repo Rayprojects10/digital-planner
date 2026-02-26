@@ -1,0 +1,201 @@
+:root {
+    --bg: #0f0f11;
+    --card: rgba(255, 255, 255, 0.05);
+    --text: #ffffff;
+    --accent: #7c5cff;
+    --border: rgba(255, 255, 255, 0.1);
+
+    --alta: #ff4d4d;
+    --media: #ffaa00;
+    --baixa: #00c896;
+}
+
+body.light {
+    --bg: #f5f7fb;
+    --card: rgba(255, 255, 255, 0.7);
+    --text: #111;
+    --border: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s ease;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    backdrop-filter: blur(10px);
+}
+
+/* LAYOUT PRINCIPAL */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 30px;
+}
+
+/* CARDS */
+.calendar, .tasks {
+    background: var(--card);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease;
+}
+
+.calendar:hover, .tasks:hover {
+    transform: translateY(-3px);
+}
+
+#calendarDays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.day {
+    padding: 12px;
+    border-radius: 10px;
+    background: transparent;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.day:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select, button {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    outline: none;
+    transition: 0.2s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(124, 92, 255, 0.2);
+}
+
+button {
+    background: linear-gradient(135deg, #7c5cff, #5a3dff);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(124, 92, 255, 0.4);
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+#taskList li {
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    background: var(--card);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border-left: 6px solid;
+}
+
+#taskList li:hover {
+    transform: translateX(5px);
+}
+
+/*Prioridades*/
+.alta {
+    border-color: var(--alta);
+}
+
+.media {
+    border-color: var(--media);
+}
+
+.baixa {
+    border-color: var(--baixa);
+}
+
+.concluida {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+#progressContainer {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c5cff, #00d4ff);
+    transition: width 0.3s ease;
+}
+
+#progressText {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+#toggleTheme {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#toggleTheme:hover {
+    background: var(--accent);
+    color: white;
+}
+
+@media (max-width: 900px) {
+    main{
+        grid-template-columns: 1fr;
+    }
+}
+
+.completed {
+    opacity: 0.6;
+    text-decoration:line-through;
+}
