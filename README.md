@@ -101,9 +101,10 @@ Desenvolvedora Front-End
 
 GitHub: https://github.com/Rayprojects10
 
-🇺🇸 
-# Digital Planner
+🇺🇸
+# English Version
 
+# Digital Planner
 A modern digital planner focused on visual experience, organization, and productivity — built using pure HTML, CSS, and JavaScript.
 
 # Overview
